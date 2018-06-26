@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resource :user, only: [:show, :update]
 
     resources :profiles, params: :username, only: [:show]
+
+    resources :articles, params: :slug, except: [:edit, :new]
   end
 end
