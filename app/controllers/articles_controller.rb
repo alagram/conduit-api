@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
     @articles_count = @articles.count
 
-    @articles = @articles.order(create_at: :desc).offset(params[:offset] || 0).limit(params[:limit] || 20)
+    @articles = @articles.order(created_at: :desc).offset(params[:offset] || 0).limit(params[:limit] || 20)
   end
 
   def create
