@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
 
     @articles = @articles.authored_by(params[:author]) if params[:author].present?
 
+    @articles = @articles.favorited_by(params[:favorited]) if params[:favorited].present?
+
     @articles_count = @articles.count
 
     @articles = @articles.order(created_at: :desc).offset(params[:offset] || 0).limit(params[:limit] || 20)
