@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'acts-as-taggable-on', git: 'https://github.com/mbleigh/acts-as-taggable-on'
-gem 'acts_as_follower'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'jwt', '~> 1.5.4'
 gem 'rack-cors', '~> 0.4.0'
