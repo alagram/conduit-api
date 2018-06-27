@@ -54,6 +54,16 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def feed
+    @articles = Article.includes(:user).where(user: current_user.following_users)
+
+    @articles_count = @articles.count
+
+    @articles = @articles.order(created_at: :desc).offset(params[:offset] || 0).limit(params[:limit] || 20)
+
+    render :index
+  end
+
   private
 
   def article_params
