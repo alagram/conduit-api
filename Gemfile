@@ -38,7 +38,7 @@ gem 'acts-as-taggable-on', git: 'https://github.com/mbleigh/acts-as-taggable-on'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'jwt', '~> 1.5.4'
-gem 'rack-cors', '~> 0.4.0'
+gem 'rack-cors', require: 'rack/cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

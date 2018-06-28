@@ -26,6 +26,13 @@ module ConduitApi
     # -- all .rb files in that directory are automatically loaded.
 
     # Don't generate system test files.
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :patch, :options]
+      end
+    end
+
     config.generators.system_tests = nil
   end
 end
